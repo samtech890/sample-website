@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.94);
+  background: #0a0b0d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(132, 138, 145, 0.18), transparent 30%),
+    #0a0b0d;
+  color: #f5f5f4;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(198, 208, 216, 0.2);
+  color: #f5f5f4;
+}
+
+.tech-label,
+.mono {
+  font-family: 'JetBrains Mono', 'SFMono-Regular', monospace;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-weight: 900;
+  letter-spacing: -0.08em;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12), transparent 10%),
+    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.08), transparent 14%),
+    radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.06), transparent 16%);
+  opacity: 0.16;
+  mix-blend-mode: screen;
+  z-index: 20;
+}
+
+.grid-surface {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at center, black 55%, transparent 100%);
+}
+
+.industrial-object {
+  position: relative;
+  width: min(86vw, 560px);
+  height: min(86vw, 560px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.hero-ring,
+.machine-ring {
+  position: absolute;
+  border: 1px solid rgba(216, 220, 224, 0.26);
+  box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.06);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 70%);
+}
+
+.ring-one {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: rotateX(70deg) rotateZ(16deg);
+}
+
+.ring-two {
+  width: 72%;
+  height: 72%;
+  border-radius: 50%;
+  transform: rotateY(64deg) rotateZ(-18deg);
+}
+
+.ring-three {
+  width: 43%;
+  height: 43%;
+  border-radius: 50%;
+  transform: rotateX(72deg) rotateZ(28deg);
+}
+
+.hero-core,
+.machine-core {
+  position: absolute;
+  inset: 24% 24%;
+  border: 1px solid rgba(208, 212, 215, 0.4);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(110, 118, 129, 0.08), rgba(13, 14, 16, 0.9));
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), inset 0 0 30px rgba(255, 255, 255, 0.06);
+}
+
+.hero-core::before,
+.machine-core::before {
+  content: '';
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.hero-capsule,
+.machine-node {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.capsule-top {
+  width: 38%;
+  height: 12%;
+  left: 31%;
+  top: 15%;
+  border-radius: 999px;
+  transform: rotate(-18deg);
+}
+
+.capsule-side {
+  width: 12%;
+  height: 34%;
+  right: 16%;
+  top: 34%;
+  border-radius: 999px;
+  transform: rotate(22deg);
+}
+
+.capsule-bottom {
+  width: 46%;
+  height: 10%;
+  left: 27%;
+  bottom: 18%;
+  border-radius: 999px;
+  transform: rotate(16deg);
+}
+
+.hero-rail {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.rail-a {
+  width: 70%;
+  left: 15%;
+  top: 46%;
+  transform: rotate(12deg);
+}
+
+.rail-b {
+  width: 60%;
+  left: 20%;
+  top: 58%;
+  transform: rotate(-18deg);
+}
+
+.rail-c {
+  width: 48%;
+  left: 25%;
+  top: 69%;
+  transform: rotate(16deg);
+}
+
+.marquee-wrap {
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee-inner {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.9rem 0;
+  white-space: nowrap;
+}
+
+.project-visual {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+}
+
+.shape {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(120, 128, 136, 0.05));
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.06);
+}
+
+.shape.orbit {
+  border-radius: 50%;
+  transform: rotateX(55deg) rotateZ(24deg);
+}
+
+.shape.forge {
+  border-radius: 12% 18% 18% 12%;
+  transform: rotate(16deg) scale(0.9);
+}
+
+.shape.vector {
+  border-radius: 28% 72% 28% 72%;
+  transform: rotate(24deg);
+}
+
+.shape.monolith {
+  border-radius: 8% 14% 14% 8%;
+  transform: rotate(-18deg);
+}
+
+.machine-shell {
+  position: absolute;
+  inset: 10% 12%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.machine-ring {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ring-a {
+  inset: 8% 8%;
+  transform: rotateX(68deg) rotateY(24deg);
+}
+
+.ring-b {
+  inset: 22% 22%;
+  transform: rotateY(68deg) rotateZ(18deg);
+}
+
+.ring-c {
+  inset: 34% 34%;
+  transform: rotateX(74deg) rotateZ(48deg);
+}
+
+.machine-node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
+}
+
+.node-a { top: 16%; left: 48%; }
+.node-b { right: 20%; bottom: 24%; }
+.node-c { left: 22%; bottom: 18%; }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .industrial-object {
+    width: min(78vw, 420px);
+    height: min(78vw, 420px);
+  }
+
+  .headline {
+    letter-spacing: -0.07em;
+  }
+}
